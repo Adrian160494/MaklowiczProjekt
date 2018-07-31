@@ -17,6 +17,8 @@ html {
     html body header {
       height: 550px; }
       html body header .header_container {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         text-align: center;
         padding: 70px;
@@ -52,11 +54,12 @@ html {
         cursor: pointer; }
       html body main section .main_voting_panel .main_voting_panel_form .main_voting_panel_form_input_container .main_voting_panel_form_description {
         display: none;
-        float: left;
         width: 360px;
         height: 457px;
         text-align: center;
         position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         padding: 80px;
         margin: 0;
@@ -89,6 +92,8 @@ html {
           transform: rotate(-3deg);
           cursor: pointer; }
       html body main section .main_voting_panel .main_voting_panel_form .main_voting_panel_form_submit_button_container .main_voting_panel_form_submit_button_checked {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         font-family: var(--font_header_type);
         color: white;
@@ -96,6 +101,8 @@ html {
         font-size: 35pt;
         transition: 1s all; }
       html body main section .main_voting_panel .main_voting_panel_form .main_voting_panel_form_submit_button_container .main_voting_panel_form_submit_button_unchecked {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         font-family: var(--font_header_type);
         color: white;

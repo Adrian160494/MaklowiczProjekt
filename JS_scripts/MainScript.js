@@ -14,9 +14,9 @@ $(document).ready(function () {
             thanksSection.fadeIn();
         },500);
         setTimeout(function () {
-            thanksSection.fadeOut();
-            fillFormWithInoputsAndButtons(arrayOfImages);
+            fillFormWithInoputsAndButtons(arrayOfImages,arrayOfDescriptions);
             addEventListenersToEveryTasteToCheckTheTastes();
+            thanksSection.fadeOut();
         },5000);
     })
 

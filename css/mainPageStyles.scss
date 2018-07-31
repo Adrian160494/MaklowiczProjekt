@@ -19,6 +19,8 @@ html{
     header{
       height: 550px;
       .header_container{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
         text-align: center;
         padding: 70px;
@@ -66,11 +68,12 @@ html{
               }
               .main_voting_panel_form_description{
                 display:none;
-                float: left;
                 width:360px;
                 height:457px;
                 text-align: center;
                 position: relative;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 padding:80px;
                 margin:0;
@@ -110,6 +113,8 @@ html{
                 }
               }
               .main_voting_panel_form_submit_button_checked{
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 font-family: var(--font_header_type);
                 color:white;
@@ -118,6 +123,8 @@ html{
                 transition: 1s all;
               }
               .main_voting_panel_form_submit_button_unchecked{
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 font-family: var(--font_header_type);
                 color:white;

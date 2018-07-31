@@ -76,7 +76,6 @@ main section .main_voting_panel_form input, main section .main_voting_panel_form
 }
 main section .main_voting_panel_form_description{
     display:none;
-    float: left;
     width:360px;
     height:457px;
     text-align: center;
@@ -149,7 +148,7 @@ main section .main_voting_panel_form_submit_button .form_submit_button_text{
 }
 
 
-/* Styles for thanks section of the website */
+/* Styles for the thanksPage */
 
 .thanks_container{
     position: absolute;
