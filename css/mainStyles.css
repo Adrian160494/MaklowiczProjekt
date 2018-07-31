@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+    font-family: SantEliaScriptBold;
+    src: url("./fonts/SantEliaScriptBoldDEMO.otf") format("opentype");
+}
+
+html{
+    background-color: black;
+    --background_color: white;
+    --font_header_color: rgb(121,175,200) ;
+    --font_header_type: SantEliaScriptBold;
+    --background_button_submit_color_unchecked: rgb(121,175,200);
+}
+
+body{
+    background-color: white;
+    margin:auto;
+    width:1080px;
+    height:1920px;
+}
+
+header{
+    height: 550px;
+}
+
+header .header_container{
+    box-sizing: border-box;
+    text-align: center;
+    padding: 70px;
+    width:100%;
+    height:100%;
+
+}
+
+header .header_logo_image_container{
+    width:348px;
+    height:348px;
+    margin: auto 0;
+    float:left;
+}
+
+header .header_logo_image_container img{
+    width:348px;
+    height:348px;
+}
+
+header .header_logo_text_container{
+    margin-left: 50px;
+    float: left;
+}
+
+header .header_logo_text{
+    text-align: center;
+    font-family: var(--font_header_type);
+    color: var(--font_header_color);
+    width:540px;
+    font-size: 55pt;
+    transform: rotate(-3deg);
+    line-height:80px;
+
+}
+
+header .header_logo_text .header_logo_lext_special_character{
+    font-family:sans-serif;
+}
+
+main section .main_voting_panel_form_input_container{
+    width:360px;
+    height:457px;
+    float:left;
+}
+
+main section .main_voting_panel_form input, main section .main_voting_panel_form img {
+    position: absolute;
+}
+main section .main_voting_panel_form_description{
+    display:none;
+    float: left;
+    width:360px;
+    height:457px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    padding:80px;
+    margin:0;
+    z-index:10;
+    background-color: rgba(10,10,10,0.6);
+}
+
+main section .main_voting_panel_form_description_container{
+    height:200px;
+    margin-top: 90px;
+}
+
+main section .main_voting_panel_form_description_button_choosed{
+    border: 3px solid white;
+    padding: 15px 40px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    color:white;
+
+}
+
+main section .main_voting_panel_form_description_text{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color:white;
+    margin-top: 60px;
+}
+
+
+main section .main_voting_panel_form_submit_button_container{
+    width:360px;
+    height:457px;
+}
+
+main section .main_voting_panel_form_submit_button{
+    width:300px;
+    height:397px;
+    margin: 30px 30px;
+    cursor: pointer;
+}
+
+main section .main_voting_panel_form_submit_button_unchecked{
+    box-sizing: border-box;
+    font-family: var(--font_header_type);
+    color:white;
+    background-color: var(--background_button_submit_color_unchecked);
+    font-size: 35pt;
+
+}
+main section .main_voting_panel_form_submit_button .form_submit_button_text{
+    transform: rotate(-3deg);
+    cursor: pointer;
+}
+
+
+
+
+
+
