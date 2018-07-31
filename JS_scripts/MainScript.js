@@ -17,7 +17,7 @@ function fillForm() {
         htmlContent = htmlContent +
             "<div class='main_voting_panel_form_input_container'>" +
                 "<input hidden class='main_voting_panel_form_input' id='taste_"+i+"' name='taste_"+i+"' type='checkbox' />" +
-                "<img class='main_voting_panel_form_img' name='taste_"+i+"' src='images/"+images[Math.floor((Math.random() * 3) + 1)]+"'/>" +
+                "<img class='main_voting_panel_form_img' name='taste_"+i+"' src='images/"+images[Math.floor((Math.random() * (images.length-1)) + 1)]+"'/>" +
                 "<div class='main_voting_panel_form_description'>" +
                     "<div class='main_voting_panel_form_description_container'>" +
                         "<span class='main_voting_panel_form_description_button_choosed'>Wybrano</span>" +
@@ -47,6 +47,7 @@ function addEventListenersToEveryTasteToCheckTheTastes() {
                 $('#'+nameOfCheckboxWithProperTaste).parent().children('.main_voting_panel_form_description').fadeIn();
                 addEventListenerToEveryDescritpionTasteToUncheckTheTaset(nameOfCheckboxWithProperTaste);
             }
+            changeAppearanceOfVotingButton();
         })
     })
 }
@@ -55,6 +56,27 @@ function addEventListenerToEveryDescritpionTasteToUncheckTheTaset(taste) {
     $('#'+taste).parent().children('.main_voting_panel_form_description').bind('click',function () {
         $('#'+taste).parent().children('.main_voting_panel_form_description').fadeOut();
         $('#'+taste).prop('checked',false);
+        changeAppearanceOfVotingButton();
     })
 
+}
+
+function changeAppearanceOfVotingButton() {
+    var checked =0;
+    $('.main_voting_panel_form_input').each(function () {
+
+        if($(this).prop('checked')){
+            checked++;
+        }
+    });
+    console.log(checked);
+    if(checked >0){
+        $('.main_voting_panel_form_submit_button').removeClass('main_voting_panel_form_submit_button_unchecked');
+        $('.main_voting_panel_form_submit_button').addClass('main_voting_panel_form_submit_button_checked');
+    } else{
+        $('.main_voting_panel_form_submit_button').addClass('main_voting_panel_form_submit_button_unchecked');
+        $('.main_voting_panel_form_submit_button').removeClass('main_voting_panel_form_submit_button_checked');
+    }
+
+    checked =0;
 }

@@ -10,6 +10,7 @@ html{
     --font_header_color: rgb(121,175,200) ;
     --font_header_type: SantEliaScriptBold;
     --background_button_submit_color_unchecked: rgb(121,175,200);
+    --background_button_submit_color_checked: rgb(200,30,51);
 }
 
 body{
@@ -122,6 +123,15 @@ main section .main_voting_panel_form_submit_button{
     cursor: pointer;
 }
 
+main section .main_voting_panel_form_submit_button_checked{
+    box-sizing: border-box;
+    font-family: var(--font_header_type);
+    color:white;
+    background-color: var(--background_button_submit_color_checked);
+    font-size: 35pt;
+
+}
+
 main section .main_voting_panel_form_submit_button_unchecked{
     box-sizing: border-box;
     font-family: var(--font_header_type);
@@ -130,6 +140,7 @@ main section .main_voting_panel_form_submit_button_unchecked{
     font-size: 35pt;
 
 }
+
 main section .main_voting_panel_form_submit_button .form_submit_button_text{
     transform: rotate(-3deg);
     cursor: pointer;
