@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+    font-family: SantEliaScriptBold;
+    src: url("./fonts/SantEliaScriptBoldDEMO.otf") format("opentype");
+}
+
+html{
+    background-color: white;
+    --background_color: white;
+    --font_header_color: rgb(86,177,202) ;
+    --font_header_type: SantEliaScriptBold;
+}
+
+body{
+    width:1080px;
+    height:1920px;
+    margin:auto;
+    background-color:black;
+}
+
+.thanks_container{
+    width: 1080px;
+    height: 1920px;
+    background-image: url('../images/background_mak.png');
+    padding: 455px 0;
+    box-sizing: border-box;
+
+
+}
+
+.thanks_container .thanks_background{
+    width:1080px;
+    height:1920px;
+}
+
+.thanks_container .thanks_background_img{
+    width:1080px;
+    height:1920px;
+}
+
+.thanks_container .thanks_content{
+    width:1080px;
+}
+
+.thanks_container .thanks_content .thanks_logo_container{
+    padding: 0 165px;
+}
+
+.thanks_container .thanks_content .thanks_logo_container .thanks_logo_img{
+}
+
+.thanks_container .thanks_content .thanks_logo_container .thanks_text{
+
+}
+
+.thanks_container .thanks_content .thanks_text .thanks_text_text{
+    font-size: 120px;
+    margin-top:45px;
+    text-align: center;
+    font-family: var(--font_header_type);
+    color: var(--font_header_color);
+    transform: rotate(-3deg);
+
+}

@@ -58,7 +58,6 @@ header .header_logo_text{
     font-size: 55pt;
     transform: rotate(-3deg);
     line-height:80px;
-
 }
 
 header .header_logo_text .header_logo_lext_special_character{
@@ -73,6 +72,7 @@ main section .main_voting_panel_form_input_container{
 
 main section .main_voting_panel_form input, main section .main_voting_panel_form img {
     position: absolute;
+    cursor:pointer;
 }
 main section .main_voting_panel_form_description{
     display:none;
@@ -129,6 +129,7 @@ main section .main_voting_panel_form_submit_button_checked{
     color:white;
     background-color: var(--background_button_submit_color_checked);
     font-size: 35pt;
+    transition: 1s all;
 
 }
 
@@ -138,6 +139,7 @@ main section .main_voting_panel_form_submit_button_unchecked{
     color:white;
     background-color: var(--background_button_submit_color_unchecked);
     font-size: 35pt;
+    transition: 1s all;
 
 }
 
@@ -146,6 +148,57 @@ main section .main_voting_panel_form_submit_button .form_submit_button_text{
     cursor: pointer;
 }
 
+
+/* Styles for thanks section of the website */
+
+.thanks_container{
+    position: absolute;
+    top:0;
+    display:none;
+    width: 1080px;
+    height: 1920px;
+    background-image: url('../images/background_mak.png');
+    padding: 455px 0;
+    box-sizing: border-box;
+    z-index: 30;
+
+
+}
+
+.thanks_container .thanks_background{
+    width:1080px;
+    height:1920px;
+}
+
+.thanks_container .thanks_background_img{
+    width:1080px;
+    height:1920px;
+}
+
+.thanks_container .thanks_content{
+    width:1080px;
+}
+
+.thanks_container .thanks_content .thanks_logo_container{
+    padding: 0 165px;
+}
+
+.thanks_container .thanks_content .thanks_logo_container .thanks_logo_img{
+}
+
+.thanks_container .thanks_content .thanks_logo_container .thanks_text{
+
+}
+
+.thanks_container .thanks_content .thanks_text .thanks_text_text{
+    font-size: 120px;
+    margin-top:45px;
+    text-align: center;
+    font-family: var(--font_header_type);
+    color: var(--font_header_color);
+    transform: rotate(-3deg);
+
+}
 
 
 

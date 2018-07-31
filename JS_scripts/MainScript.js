@@ -1,23 +1,37 @@
 /**
  * Created by Adrian on 31.07.2018.
  */
-
 $(document).ready(function () {
-    console.log("Ready");
-    fillForm();
+    var arrayOfImages = ['smak1.png','smak2.png','smak3.png','smak4.png','smak3.png','smak2.png','smak4.png','smak3.png'];
+    var thanksSection = $('.thanks_container');
+    fillFormWithInoputsAndButtons(arrayOfImages);
     addEventListenersToEveryTasteToCheckTheTastes();
+
+    $('#voting_form').on('submit',function (event) {
+        event.preventDefault();
+        setTimeout(function () {
+            thanksSection.fadeIn();
+        },500);
+        setTimeout(function () {
+            thanksSection.fadeOut();
+            fillFormWithInoputsAndButtons(arrayOfImages);
+            addEventListenersToEveryTasteToCheckTheTastes();
+        },5000);
+    })
 
 });
 
-function fillForm() {
-    console.log("Działam");
-    var images = ['smak1.png','smak2.png','smak3.png','smak4.png'];
-    var htmlContent = '';
-    for(var i=0;i<8;i++){
-        htmlContent = htmlContent +
+
+function fillFormWithInoputsAndButtons(arrayOfImages) {
+    var voteForm = $('#voting_form');
+    var images = arrayOfImages;
+    var buttonSubmitText= "Głosuję";
+    var formContent = '';
+    for(var i=0;i<images.length;i++){
+        formContent = formContent +
             "<div class='main_voting_panel_form_input_container'>" +
                 "<input hidden class='main_voting_panel_form_input' id='taste_"+i+"' name='taste_"+i+"' type='checkbox' />" +
-                "<img class='main_voting_panel_form_img' name='taste_"+i+"' src='images/"+images[Math.floor((Math.random() * (images.length-1)) + 1)]+"'/>" +
+                "<img class='main_voting_panel_form_img' name='taste_"+i+"' src='images/"+images[i]+"'/>" +
                 "<div class='main_voting_panel_form_description'>" +
                     "<div class='main_voting_panel_form_description_container'>" +
                         "<span class='main_voting_panel_form_description_button_choosed'>Wybrano</span>" +
@@ -26,17 +40,16 @@ function fillForm() {
                 "</div>" +
             "</div>";
     }
-    htmlContent = htmlContent +
+    formContent = formContent +
         '<span class="main_voting_panel_form_submit_button_container">' +
-            '<button class="main_voting_panel_form_submit_button main_voting_panel_form_submit_button_unchecked" type="submit">' +
-            '<p class="form_submit_button_text">Głosuję!</p></button>' +
+            '<button class="main_voting_panel_form_submit_button main_voting_panel_form_submit_button_unchecked" type="submit" disabled>' +
+            '<p class="form_submit_button_text">'+buttonSubmitText+'<span class="font_specialCharacter">!</span></p></button>' +
         '</span>';
-
-    console.log(htmlContent);
-    $('#voting_form').html(htmlContent);
+    voteForm.html(formContent);
 }
 
 function addEventListenersToEveryTasteToCheckTheTastes() {
+    var formInputDescription = '.main_voting_panel_form_description';
     $('.main_voting_panel_form_img').each(function (index) {
         $(this).bind('click',function () {
             var nameOfCheckboxWithProperTaste = $(this).attr('name');
@@ -44,17 +57,18 @@ function addEventListenersToEveryTasteToCheckTheTastes() {
                 $('#'+nameOfCheckboxWithProperTaste).prop('checked',false);
             } else {
                 $('#'+nameOfCheckboxWithProperTaste).prop('checked',true);
-                $('#'+nameOfCheckboxWithProperTaste).parent().children('.main_voting_panel_form_description').fadeIn();
-                addEventListenerToEveryDescritpionTasteToUncheckTheTaset(nameOfCheckboxWithProperTaste);
+                $('#'+nameOfCheckboxWithProperTaste).parent().children(formInputDescription).show('clip',400);
+                addEventListenerToEveryDescritpionTasteToUncheckTheTaste(nameOfCheckboxWithProperTaste);
             }
             changeAppearanceOfVotingButton();
         })
     })
 }
 
-function addEventListenerToEveryDescritpionTasteToUncheckTheTaset(taste) {
-    $('#'+taste).parent().children('.main_voting_panel_form_description').bind('click',function () {
-        $('#'+taste).parent().children('.main_voting_panel_form_description').fadeOut();
+function addEventListenerToEveryDescritpionTasteToUncheckTheTaste(taste) {
+    var formInputDescription = '.main_voting_panel_form_description';
+    $('#'+taste).parent().children(formInputDescription).bind('click',function () {
+        $('#'+taste).parent().children(formInputDescription).hide('clip',400);
         $('#'+taste).prop('checked',false);
         changeAppearanceOfVotingButton();
     })
@@ -62,21 +76,25 @@ function addEventListenerToEveryDescritpionTasteToUncheckTheTaset(taste) {
 }
 
 function changeAppearanceOfVotingButton() {
-    var checked =0;
-    $('.main_voting_panel_form_input').each(function () {
+    var formInput = $('.main_voting_panel_form_input');
+    var submitButton = $('.main_voting_panel_form_submit_button');
+    var checkedButtonClass = 'main_voting_panel_form_submit_button_checked';
+    var uncheckedButtonClass ='main_voting_panel_form_submit_button_unchecked';
+    var numberOfCheckedInputs =0;
 
+    formInput.each(function () {
         if($(this).prop('checked')){
-            checked++;
+            numberOfCheckedInputs++;
         }
     });
-    console.log(checked);
-    if(checked >0){
-        $('.main_voting_panel_form_submit_button').removeClass('main_voting_panel_form_submit_button_unchecked');
-        $('.main_voting_panel_form_submit_button').addClass('main_voting_panel_form_submit_button_checked');
+    if(numberOfCheckedInputs >0){
+        submitButton.removeAttr('disabled');
+        submitButton.removeClass(uncheckedButtonClass);
+        submitButton.addClass(checkedButtonClass);
     } else{
-        $('.main_voting_panel_form_submit_button').addClass('main_voting_panel_form_submit_button_unchecked');
-        $('.main_voting_panel_form_submit_button').removeClass('main_voting_panel_form_submit_button_checked');
+        submitButton.attr('disabled',true);
+        submitButton.addClass(uncheckedButtonClass);
+        submitButton.removeClass(checkedButtonClass);
     }
-
-    checked =0;
+    numberOfCheckedInputs=0;
 }

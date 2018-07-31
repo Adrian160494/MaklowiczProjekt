@@ -6,9 +6,10 @@
     <meta name="keywords" content=""/>
     <meta name="author" content=""/>
     <title>P.Makłowicz - Lody Tradycyjne</title>
-    <link rel="stylesheet" href="css/mainStyles.css"/>
-    <script src="JS_scripts/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/mainPageStyles.css"/>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="JS_scripts/MainScript.js"></script>
 </head>
 <body>
@@ -18,16 +19,28 @@
                 <img id="header_logo_image" src="images/logo_mak.png"/>
             </div>
             <div class="header_logo_text_container">
-                <p class="header_logo_text">Zagłosuj na smak tygodnia<span class="header_logo_lext_special_character">!</span></p>
+                <p class="header_logo_text">Zagłosuj na smak tygodnia<span class="font_specialCharacter">!</span></p>
             </div>
         </div>
     </header>
     <main>
         <section>
             <div class="main_voting_panel">
-                <form class="main_voting_panel_form" id="voting_form" method="GET">
+                <form class="main_voting_panel_form" id="voting_form" novalidate>
 
                 </form>
+            </div>
+        </section>
+        <section>
+            <div class="thanks_container">
+                <div class="thanks_content">
+                    <div class="thanks_logo_container">
+                        <img class="thanks_logo_img" src="images/thanks_logo.png"/>
+                    </div>
+                    <div class="thanks_text">
+                        <p class="thanks_text_text">Dziękujemy<span class="font_specialCharacter">!</span></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
