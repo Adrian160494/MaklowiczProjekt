@@ -3,8 +3,9 @@
  */
 $(document).ready(function () {
     var arrayOfImages = ['smak1.png','smak2.png','smak3.png','smak4.png','smak3.png','smak2.png','smak4.png','smak3.png'];
+    var arrayOfDescriptions = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit'];
     var thanksSection = $('.thanks_container');
-    fillFormWithInoputsAndButtons(arrayOfImages);
+    fillFormWithInoputsAndButtons(arrayOfImages,arrayOfDescriptions);
     addEventListenersToEveryTasteToCheckTheTastes();
 
     $('#voting_form').on('submit',function (event) {
@@ -22,9 +23,10 @@ $(document).ready(function () {
 });
 
 
-function fillFormWithInoputsAndButtons(arrayOfImages) {
+function fillFormWithInoputsAndButtons(arrayOfImages,arrayOfDescriptions) {
     var voteForm = $('#voting_form');
     var images = arrayOfImages;
+    var descriptions = arrayOfDescriptions;
     var buttonSubmitText= "Głosuję";
     var formContent = '';
     for(var i=0;i<images.length;i++){
@@ -35,7 +37,7 @@ function fillFormWithInoputsAndButtons(arrayOfImages) {
                 "<div class='main_voting_panel_form_description'>" +
                     "<div class='main_voting_panel_form_description_container'>" +
                         "<span class='main_voting_panel_form_description_button_choosed'>Wybrano</span>" +
-                        "<p class='main_voting_panel_form_description_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>" +
+                        "<p class='main_voting_panel_form_description_text'>"+descriptions[0]+"</p>" +
                     "</div>" +
                 "</div>" +
             "</div>";
